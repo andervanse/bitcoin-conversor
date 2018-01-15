@@ -40,8 +40,23 @@
                 <!-- Your content goes here -->
 
                 <div class="center-content">
+                    <div class="text-bottom">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                            <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="BRL" checked>
+                            <span class="mdl-radio__label">R$</span>
+                        </label>
+                        &nbsp;&nbsp;
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                            <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="USD">
+                            <span class="mdl-radio__label">U$</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="center-content">
                     <h2>
-                        Bitcoin &nbsp;&nbsp;<input id="bitcoinPrice" type="text" maxlength="5" pattern="-?[0-9]*(\.[0-9]+)?">
+                        Bitcoin &nbsp;&nbsp;
+                        <input class="center-content-input" id="bitcoinPrice" type="text" maxlength="5"
+                            pattern="-?[0-9]*(\.[0-9]+)?" />
                     </h2>
                 </div>
                 <div id="cards"></div>
