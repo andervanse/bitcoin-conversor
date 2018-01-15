@@ -1,7 +1,7 @@
-{ 
-    "name" : "bitcoin-price",
+﻿{ 
+    "name" : "bitcoin-conversor",
     "version": "1.0.0",
-    "description": "Pesquisa preço do bitcoin",
+    "description": "Conversor de preço de bitcoin",
     "email" : "andervanse@gmail.com",
     "main":"index.js",
     "scripts": {
