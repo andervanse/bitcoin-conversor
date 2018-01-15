@@ -1,0 +1,15 @@
+{ 
+    "name" : "bitcoin-price",
+    "version": "1.0.0",
+    "description": "Pesquisa preço do bitcoin",
+    "email" : "andervanse@gmail.com",
+    "main":"index.js",
+    "scripts": {
+        "start": "http-server -c-1 -p 3000 -o"
+    },
+    "author": "Anderson Davanse",
+    "devDependencies": {
+        "http-server": "^0.10.0"
+    }
+    
+}
