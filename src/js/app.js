@@ -30,13 +30,15 @@ window.addEventListener('load', function (event) {
     bitcoinPrice.addEventListener('keyup', function (event) {
         var currencyLbl = document.getElementsByClassName('is-checked')[0];
         var ckBox = currencyLbl.children.namedItem('options');
-        console.log(ckBox.value);
+        console.log(ckBox);
 
         if (event.key in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', ','] || event.key == 'Backspace') {
-            if (parseFloat(bitcoinPrice.value) !== NaN) {
+            if (bitcoinPrice.value && parseFloat(bitcoinPrice.value) !== NaN) {
                 lastValue = parseFloat(bitcoinPrice.value);
-                UpdatePrice(ckBox);
+            } else {
+                lastValue = 0;
             }
+            UpdatePrice(ckBox);
         }
     })
 });
@@ -59,9 +61,9 @@ function convertToCurrency(coin) {
     var newCart = document.createElement('div');
     var html =
         '<div class="center-content">' +
-        '     <h2>' + coin.code +
+        '     <h1>' + coin.code +
         '         ' + parseFloat(coin.rate_float * lastValue).toLocaleString() +
-        '     </h2>';
+        '     </h1>';
 
     if (coin.description) {
         html = html + '  <span> (' + coin.description + ') </span>';
