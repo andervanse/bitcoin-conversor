@@ -30,7 +30,6 @@ window.addEventListener('load', function (event) {
     bitcoinPrice.addEventListener('keyup', function (event) {
         var currencyLbl = document.getElementsByClassName('is-checked')[0];
         var ckBox = currencyLbl.children.namedItem('options');
-        console.log(ckBox);
 
         if (event.key in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', ','] || event.key == 'Backspace') {
             if (bitcoinPrice.value && parseFloat(bitcoinPrice.value) !== NaN) {
