@@ -2,15 +2,19 @@
   .center-content {
     top: auto;
     width: 650px;
-    height: 80px;
+    height: 110px;
     margin: auto;
     padding: 10px;
     margin-top: 10px;
     text-align: center;
+    font-size: 74px;
   }
 
+  .center-content .text-small {
+    font-size: 22px;
+  }
   .mdl-radio {
-    font-size: 30px;
+    font-size: 34px;
   }
   .center-content-input {
     font-size: 65px;

@@ -61,17 +61,16 @@ function convertToCurrency(coin) {
     var newCart = document.createElement('div');
     var html =
         '<div class="center-content">' +
-        '     <h1>' + coin.code +
-        '         ' + parseFloat(coin.rate_float * lastValue).toLocaleString() +
-        '     </h1>';
+        '     ' + coin.code +
+        '     ' + parseFloat(coin.rate_float * lastValue).toLocaleString();
 
     if (coin.description) {
-        html = html + '  <span> (' + coin.description + ') </span>';
+        html = html + ' <br><br><br><span class="text-small"> (' + coin.description + ') </span>';
     }
 
     if (coin.updatedISO) {
         var updateDt = new Date(coin.updatedISO);
-        html = html + '  <br><span> Atualizado em ' + updateDt.toLocaleTimeString() + '</span>';
+        html = html + '  <br><br><span class="text-small"> Atualizado em ' + updateDt.toLocaleTimeString() + '</span>';
     }
 
     html = html + '</div>';
