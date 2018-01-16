@@ -2,12 +2,14 @@
 
 <head>
     <!-- Material Design Lite -->
-    <script src="./src/js/material.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/material.min.css">
     <link rel="stylesheet" href="./src/css/app.css">
+    <script src="./src/js/material.min.js"></script>
 
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
 </head>
 
 <body>
@@ -16,9 +18,8 @@
     <div class="mdl-layout mdl-js-layout mdl-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">Cotação do Bitcoin</span>
-                <div class="mdl-layout-spacer"></div>                
-            </div>
+                <span class="mdl-layout-title">Cotação Bitcoin</span>                              
+            </div>            
         </header>
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Menu</span>
@@ -31,17 +32,15 @@
                 <!-- Your content goes here -->
 
                 <div class="center-content">
-                    <div class="text-bottom">
-                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-                            <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="BRL" checked>
-                            <span class="mdl-radio__label">R$</span>
-                        </label>
-                        &nbsp;&nbsp;
-                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-                            <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="USD">
-                            <span class="mdl-radio__label">U$</span>
-                        </label>
-                    </div>
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                        <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="BRL" checked>
+                        <span class="mdl-radio__label">R$</span>
+                    </label>
+                    &nbsp;&nbsp;
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                        <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="USD">
+                        <span class="mdl-radio__label">U$</span>
+                    </label>
                 </div>
                 <div class="center-content">
                     
@@ -53,12 +52,12 @@
             </div>            
         </main>
         <footer class="mdl-mini-footer">
-            <div class="mdl-mini-footer__left-section">
-              <div class="mdl-logo">Cotação do Bitcoin</div>
+            <div class="mdl-mini-footer__left-section">                
               <ul class="mdl-mini-footer__link-list">
                 <li><a href="https://www.coindesk.com/price/" target="_blank">Powered by CoinDesk</a></li>
               </ul>
             </div>        
+            <p class="copyright">© andervanse - 2018</p>
         </footer>           
     </div>    
 </body>
