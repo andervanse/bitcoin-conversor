@@ -26,7 +26,9 @@ window.addEventListener('load', function (event) {
 
         })
         .catch(function (err) {
-            console.log(err);
+            console.log('status', err);
+            var notification = document.querySelector('.mdl-js-snackbar');
+            notification.MaterialSnackbar.showSnackbar({ message: 'Falha na conexão com a internet!' });
         });
 
     document.getElementsByName('options').forEach(function (value, index, lst){

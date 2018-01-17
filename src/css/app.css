@@ -26,6 +26,10 @@
     height: 12px;
   }
 
+  .mdl-snackbar {
+    background-color: rgb(96,125,139);
+  }
+
   @media screen and (max-width:500px) {
     .center-content {
       height: 28px;
