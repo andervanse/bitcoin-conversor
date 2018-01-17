@@ -20,9 +20,18 @@ window.addEventListener('load', function (event) {
         });
 
     document.getElementsByName('options').forEach(function (value, index, lst){
-        value.onclick = function(event) {
+        value.addEventListener('click', function(event) {
             UpdatePrice(event.path[0]);
-        }
+        });
+    });
+
+    document.getElementById('btnRefresh').addEventListener('click', function(event) {
+        document.getElementsByName('options').forEach(function (value, index, lst) {
+            if (value.checked) {
+                UpdatePrice(value);
+                console.log('update price', value.value);
+            }
+        });        
     });
 
     var bitcoinPrice = document.getElementById('bitcoinPrice');
