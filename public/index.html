@@ -6,13 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="manifest" href="./manifest.json">
-    <link rel="stylesheet" href="./src/css/material.min.css">
     <link rel="stylesheet" href="./src/css/app.css">
-    <script src="./src/js/material.min.js"></script>
-
-    <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
+    <link rel="stylesheet" href="./src/css/material.min.css">
+    <script async src="./src/js/material.min.js"></script>
 </head>
 
 <body>
@@ -55,12 +52,17 @@
                     </button>
                 </div>
                 <div id="cards" class="center-content"></div>
-            </div>            
+            </div>
+
+            <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+                <div class="mdl-snackbar__text"></div>
+                <button type="button" class="mdl-snackbar__action"></button>
+            </div>
         </main>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">                
               <ul class="mdl-mini-footer__link-list">
-                <li><a href="https://www.coindesk.com/price/" target="_blank">Powered by CoinDesk</a></li>
+                <li><a href="https://www.coindesk.com/price/" target="_blank" rel="noopener">Powered by CoinDesk</a></li>
               </ul>
             </div>        
             <p class="copyright">© andervanse - 2018</p>            
