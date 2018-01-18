@@ -11,37 +11,18 @@ if ('serviceWorker' in navigator) {
 
 var lastValue = 0;
 var coins = [];
-window.addEventListener('load', function (event) {
-
-    fetch('https://api.coindesk.com/v1/bpi/currentprice/BRL.json')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (res) {
-            console.log(res);
-            for (coinProperty in res.bpi) {
-                res.bpi[coinProperty]['updatedISO'] = res.time.updatedISO;
-                coins.push(res.bpi[coinProperty]);
-            }
-
-        })
-        .catch(function (err) {
-            console.log('status', err);
-            var notification = document.querySelector('.mdl-js-snackbar');
-            notification.MaterialSnackbar.showSnackbar({ message: 'Falha na conexão com a internet!' });
-        });
 
     document.getElementsByName('options').forEach(function (value, index, lst){
+
         value.addEventListener('click', function(event) {
             UpdatePrice(event.path[0]);
-        });
-    });
+    });    
 
     document.getElementById('btnRefresh').addEventListener('click', function(event) {
+
         document.getElementsByName('options').forEach(function (value, index, lst) {
             if (value.checked) {
                 UpdatePrice(value);
-                console.log('update price', value.value);
             }
         });        
     });
@@ -49,6 +30,7 @@ window.addEventListener('load', function (event) {
     var bitcoinPrice = document.getElementById('bitcoinPrice');
 
     bitcoinPrice.addEventListener('keyup', function (event) {
+
         var currencyLbl = document.getElementsByClassName('is-checked')[0];
         var ckBox = currencyLbl.children.namedItem('options');
 
@@ -63,7 +45,29 @@ window.addEventListener('load', function (event) {
     })
 });
 
+function fetchCoins() {
+    console.log('fetching coins...');
+    fetch('https://api.coindesk.com/v1/bpi/currentprice/BRL.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (res) {
+            coins = [];
+            for (coinProperty in res.bpi) {
+                res.bpi[coinProperty]['updatedISO'] = res.time.updatedISO;
+                coins.push(res.bpi[coinProperty]);
+            }
+        })
+        .catch(function (err) {
+            console.log('status', err);
+            var notification = document.querySelector('.mdl-js-snackbar');
+            notification.MaterialSnackbar.showSnackbar({ message: 'Falha na conexão com a internet!' });
+        });
+}
+
 function UpdatePrice(ckBox) {
+    fetchCoins();
+
     for (var i = 0; i < coins.length; i++) {
         if (ckBox.value === coins[i].code) {
             convertToCurrency(coins[i]);
