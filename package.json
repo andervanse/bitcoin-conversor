@@ -5,7 +5,7 @@
     "email" : "andervanse@gmail.com",
     "main":"index.js",
     "scripts": {
-        "start": "http-server -c-1 -p 3000 -o"
+        "start": "http-server -c-1 -p 3000"
     },
     "author": "Anderson Davanse",
     "devDependencies": {
