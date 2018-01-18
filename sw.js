@@ -6,8 +6,6 @@ self.addEventListener('install', function(event) {
         caches.open(STATIC_CACHE_NAME)
          .then(function(cache) {
              return cache.addAll([
-                "/",
-                "https://andervanse.github.io/",
                 "manifest.json",
                 "index.html",
                 "src/css/app.css",
