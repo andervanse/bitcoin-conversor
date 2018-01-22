@@ -12,20 +12,32 @@ if ('serviceWorker' in navigator) {
 var lastValue = 0;
 var coins = [];
 
-    document.getElementsByName('options').forEach(function (value, index, lst){
+    document.getElementsByName('options').forEach(function (value, index, lst) {
 
         value.addEventListener('click', function(event) {
+            console.log('from options -> click');
             UpdatePrice(event.path[0]);
     });    
+    
+    function btnRefreshClick(event) {
+      
+        console.log('from btnRefresh');
+        console.log(event);
 
-    document.getElementById('btnRefresh').addEventListener('click', function(event) {
+        var radios = document.getElementsByName('options');
 
-        document.getElementsByName('options').forEach(function (value, index, lst) {
-            if (value.checked) {
-                UpdatePrice(value);
+        for (var i = 0; i < radios.length; i++)
+        {
+            if (radios[i].checked) {
+                UpdatePrice(radios[i]);
+                break;
             }
-        });        
-    });
+        }        
+    }
+
+    var newBtnRefreshHandle = function(event) { btnRefreshClick(event); };
+
+    document.getElementById('btnRefresh').addEventListener('click', newBtnRefreshHandle, false);
 
     var bitcoinPrice = document.getElementById('bitcoinPrice');
 

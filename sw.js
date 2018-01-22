@@ -36,16 +36,15 @@ self.addEventListener('fetch', function(event) {
         } else {
 
           return caches.open(DYNAMIC_CACHE_NAME)
-              .then(function(cache) {
-                  
-                console.log(event.request.url,  " added to dynamic cache.");
+              .then(function(cache) {                 
                   console.log('Network request for ', event.request.url);
 
                   return fetch(event.request)
                       .then(function(networkResponse) {
 
-                        if (event.request.url.indexOf('.json') == -1){
-                          cache.put(event.request, networkResponse.clone());
+                        if (event.request.url.indexOf('.json') == -1){                          
+                           cache.put(event.request, networkResponse.clone());
+                           console.log(event.request.url,  " added to dynamic cache.");
                         }
 
                         return networkResponse;  
